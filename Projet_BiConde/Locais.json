@@ -1,0 +1,74 @@
+{
+    "Locais": [
+        {
+            "nome": "Praça da República",
+            "latitude": 41.351989,
+            "longitude": -8.741828,
+            "bicicletas": 8,
+            "livres": 3
+        },
+        {
+            "nome": "Praça S. João, junto ao Mercado Municipal",
+            "latitude": 41.353491,
+            "longitude": -8.741983,
+            "bicicletas": 8,
+            "livres": 2
+        },
+        {
+            "nome": "Zona Ribeirinha, junto à Nau Quinhentista",
+            "latitude": 41.351117,
+            "longitude": -8.742523,
+            "bicicletas": 8,
+            "livres": 2
+        },
+        {
+            "nome": "Av. Júlio Graça, junto ao Parque de Jogos",
+            "latitude": 41.351417,
+            "longitude": -8.747642,
+            "bicicletas": 8,
+            "livres": 2
+        },
+        {
+            "nome": "Alameda dos Descobrimentos, junto ao Tribunal",
+            "latitude": 41.352145,
+            "longitude": -8.745855,
+            "bicicletas": 8,
+            "livres": 2
+        },
+        {
+            "nome": "Av. Brasil, junto ao Forte S. João Baptista",
+            "latitude": 41.342836,
+            "longitude": -8.751171,
+            "bicicletas": 8,
+            "livres": 3
+        },
+        {
+            "nome": "Av. Brasil, junto ao Caximar",
+            "latitude": 41.358271,
+            "longitude": -8.755838,
+            "bicicletas": 8,
+            "livres": 6
+        },
+        {
+            "nome": "Av. Infante D. Henrique, junto ao Mercado das Caxinas",
+            "latitude": 41.362300,
+            "longitude": -8.759337,
+            "bicicletas": 8,
+            "livres": 5
+        },
+        {
+            "nome": "Av. da Liberdade, junto à Estação Metro “Vila do Conde”",
+            "latitude": 41.3571861,
+            "longitude": -8.7393399,
+            "bicicletas": 8,
+            "livres": 3
+        },
+        {
+            "nome": "Rua 5 Outubro, junto ao McDonald’s",
+            "latitude": 41.367727,
+            "longitude": -8.750128,
+            "bicicletas": 8,
+            "livres": 1
+        }
+    ]
+}
