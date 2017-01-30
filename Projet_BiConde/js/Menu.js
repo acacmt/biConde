@@ -1,21 +1,17 @@
 //MAPA
 var map;
-
 function myMap() {
-
     var mapCanvas = document.getElementById("map");
     var mapOptions = {
         center: new google.maps.LatLng(41.353733, -8.747602),
         zoom: 14
     }
-    //var infoWindow;
 
+    //var infoWindow;
     map = new google.maps.Map(mapCanvas, mapOptions);
     map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
 }
-
 $(document).ready(function () {
-
     // INITIALIZE FIREBASE
     var config = {
         apiKey: "AIzaSyAX5M219NABJtvuxrHtuMWQ0yOGhfe8uc8",
@@ -25,7 +21,6 @@ $(document).ready(function () {
         messagingSenderId: "581056433304"
     };
     firebase.initializeApp(config);
-     var infoWindow = new google.maps.InfoWindow({map: map});
 
     var ref = firebase.database().ref().child("Locais");
 
@@ -87,59 +82,43 @@ $(document).ready(function () {
         //       });
         //  // })
     })
-
-
+    
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
+        navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
             };
-
+            var infoWindow = new google.maps.InfoWindow({ map: map });
             infoWindow.setPosition(pos);
             infoWindow.setContent('Você está aqui!');
             map.setCenter(pos);
-            $("#inicio").append("<option selected >Sua Localização</option>\n");
-        }, showError);
-    } else {
-        // Browser doesn't support Geolocation
-        swal('Browser não suporta geolocalização')
-
-    }
-
-    function showError(error) {
-        switch (error.code) {
-            case error.PERMISSION_DENIED:
-                swal('Localização bloqueada');
-                break;
-            case error.POSITION_UNAVAILABLE:
-                swal('Localização desconhecida');
-                break;
-            case error.TIMEOUT:
-                swal('Request to get location timeout');
-                break;
-            case error.UNKNOWN_ERROR:
-                swal('Erro desconhecido');
-                break;
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
         }
-    }
-
-
-
-
-    //INVOCAÇÃO DAS FUNÇÕES 
-    $("#btnregisto").click(function () {
-        createUser();
-    });
-
-    $("#btnLogin").click(function () {
-        login();
-    });
-
-
-    //FUNÇÃO CRIAR UMA CONTA
-    function createUser() {
+        
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+      
+      //INVOCAÇÃO DAS FUNÇÕES 
+      $("#btnregisto").click(function () {
+          createUser();
+      });
+      $("#btnLogin").click(function () {
+          login();
+      });
+      
+      //FUNÇÃO CRIAR UMA CONTA
+      function createUser() {
         var email = $('#register_email').val();
         var password = $('#register_password').val();
         console.log(email, password)
@@ -199,7 +178,6 @@ $(document).ready(function () {
             //     alert("Enviado!!!")
             // });
 
-            //Fecha o modal dos contactos ao clicar no botão "fechar"
             $("#fechar").click(function () {
                 $('#myModal').modal('hide');
             });
@@ -262,7 +240,6 @@ $(document).ready(function () {
                 alert('Inicie sessão ou registe-se para aceder!');
             })
 
-            //mostra e esconde os botões
             $('#li_login').show();
             $('#perfil').hide();
         }
