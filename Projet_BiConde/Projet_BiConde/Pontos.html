@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>biConde</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase-database.js"></script>
+
+    <!--Icon da barra de separadores-->
+    <link rel="icon" href="img/favicon.ico" type="icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <!--Invoca a estilização em css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--JAVASCRIPT-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Invoca o JavaScript-->
+    <!--<script src="js/log.js"></script>-->
+    <script src="js/Menu.js"></script>
+    <script src="js/Pontos.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!--xxxxxxxxxxxxx-->
+        <!--    NAVBAR   -->
+        <!--xxxxxxxxxxxxx-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="Menu.html">biConde</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="" id="locais">Locais</a></li>
+                            <li><a href="Informações.html">Informações</a></li>
+                            <li><a href="Galeria.html">Galeria</a></li>
+                            <li><a href="http://www.cm-viladoconde.pt/pages/1" target="_blank">Câmara</a></li>
+                            <li><a href="Contactos.html" id="contacto">Contactos</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="perfil"><strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <center><button id="btnLogout" class="btn btn-md btn-default">Terminar Sessão</button></center>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!--xxxxxx-->
+        <!-- MAPA -->
+        <!--xxxxxx-->
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <br>
+                <center>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <div id="map" class="embed-responsive-item" style="border: 1px solid black"></div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+    <!--<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb6obW80y0e0VZwoXAZ79pgNk3E1tIW1w&callback=initMap">
+    </script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+</body>
+
+</html>
