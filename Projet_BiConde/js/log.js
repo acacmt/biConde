@@ -16,7 +16,7 @@ $(function () {
                 if (lg_email == "ERROR") {
                     console.log("erro");
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
-                } else {
+                } else if (lg_email == "success") {
                     console.log("ok");
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
                 }

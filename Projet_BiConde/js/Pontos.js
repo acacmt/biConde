@@ -47,26 +47,26 @@ $(document).ready(function () {
             // Evento que dá instrução à API para estar alerta ao click no marcador.
             // Define o conteúdo e abre a Info Window.
             google.maps.event.addListener(marker, 'click', function () {
-                
+
 
                 var latLng2;
 
-                for (var k = 0; k < snap.val().length; k++) {
+                for (var j = 0; j < snap.val().length; j++) {
 
-                    if ($(this)[0].title == snap.val()[k].nome) {
-                        var lat2 = snap.val()[k].latitude;
-                        var lng2 = snap.val()[k].longitude;
-                        var nome2 = snap.val()[k].nome;
-                        var txt2 = snap.val()[k].bicicletas;
-                        var txt12 = snap.val()[k].livres;
+                    if ($(this)[0].title == snap.val()[j].nome) {
+                        var lat2 = snap.val()[j].latitude;
+                        var lng2 = snap.val()[j].longitude;
+                        var nome2 = snap.val()[j].nome;
+                        var txt2 = snap.val()[j].bicicletas;
+                        var txt3 = snap.val()[j].livres;
 
                         latLng2 = { lat: lat2, lng: lng2 };
                         //console.log(latLng2)
                         // Variável que define a estrutura do HTML a inserir na Info Window.
                         var Content = '<div id="iw_container">' +
                             '<div class="iw_title">' + nome2 + '</div>'
-                            + '<div>' + '<p class="atualizar">' + 'Bicicletas:' + txt12 + '/' + txt2 + '</p>' + '</div>'
-                            + '<div id="id_reserva">' + '<button class="reserva" value="' + k + '">' + 'Reservar' + '</button>' + '</div>' + '</div>';
+                            + '<div>' + '<p class="atualizar">' + 'Bicicletas:' + txt3 + '/' + txt2 + '</p>' + '</div>'
+                            + '<div id="id_reserva">' + '<button class="reserva" value="' + j + '">' + 'Reservar' + '</button>' + '</div>' + '</div>';
 
                         break;
                     }
@@ -87,7 +87,7 @@ $(document).ready(function () {
         }
     })
 
-    // Try HTML5 geolocation.
+    //HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var pos = {
@@ -97,12 +97,11 @@ $(document).ready(function () {
             infoWindow = new google.maps.InfoWindow({ map: map });
             infoWindow.setPosition(pos);
             infoWindow.setContent('Você está aqui!');
-            //map.setCenter(pos);
         }, function () {
             handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
-        // Browser doesn't support Geolocation
+        // Browser nao suporta Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
 
@@ -113,7 +112,7 @@ $(document).ready(function () {
             'Error: Your browser doesn\'t support geolocation.');
     }
 
-    
+
 
 
 });

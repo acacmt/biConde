@@ -71,7 +71,7 @@ $(document).ready(function () {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             //LOGIN
-            //User is signed in.
+            //User is signed in. Utilizador autenticado
 
             //Esconde a janela Modal de iniciar sessão
             $('#login-modal').modal('hide');
@@ -126,7 +126,7 @@ $(document).ready(function () {
 
         } else {
             //LOGOUT
-            // No user is signed in.
+            // No user is signed in. Utilizador nao autenticado
 
             //Altera a cor dos icons 
             $('#lock').css("color", "#d2dce8");
