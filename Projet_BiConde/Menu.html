@@ -33,7 +33,6 @@
 	<script src="js/log.js"></script>
 	<script src="js/Menu.js"></script>
 
-
 </head>
 
 <body id="body">
@@ -64,9 +63,8 @@
 						<div class="col-xs-6 col-sm-12 col-md-2 col-lg-2">
 							<a href="http://www.cm-viladoconde.pt/pages/1" target="_blank"><i class="material-icons">account_balance</i> <br> Câmara</a>
 						</div>
-						<center>
+					<center>
 				</div>
-
 			</div>
 		</header>
 	</div>
@@ -74,73 +72,67 @@
 
 	<!-- INICIO # MODAL LOGIN -->
 	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header" align="center">
-			<img class="img-circle" id="img_logo" src="img/1429877002.jpg">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<img class="img-circle" id="img_logo" src="img/1429877002.jpg">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 					</button>
-		</div>
-
-		<!-- INICIO # DIV Form -->
-		<div id="div-forms">
-
-			<!-- INICIO # Login Form -->
-			<form id="login-form">
-				<div class="modal-body">
-					<div id="div-login-msg">
-						<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-						<span id="text-login-msg">Entre com o seu e-mail e password.</span>
-					</div>
-					<input id="login_email" class="form-control" type="text" placeholder="E-Mail" required>
-					<input id="login_password" class="form-control" type="password" placeholder="Password" required>
-					<div class="checkbox">
-						<label>
-                                    <input type="checkbox"> Lembrar nome de utilizador
-                                </label>
-					</div>
 				</div>
-				<div class="modal-footer">
-					<div>
-						<button id="btnLogin" class="btn btn-lg btn-block" style="background-color: #83bde3; color: white">Entrar</button>
-</div>
-<div>
-	<button id="login_register_btn" type="button" class="btn btn-link">Registar</button>
-</div>
-</div>
-</form>
-<!-- FIM # Login Form -->
-
-<!-- INICIO | Register Form -->
-<form id="register-form" onsubmit="return false" style="display:none;">
-<div class="modal-body">
-	<div id="div-register-msg">
-		<div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
-		<span id="text-register-msg">Registe-se.</span>
+				
+				<!-- INICIO # DIV Form -->
+				<div id="div-forms">
+					<!-- INICIO # Login Form -->
+					<form id="login-form">
+						<div class="modal-body">
+							<div id="div-login-msg">
+								<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+								<span id="text-login-msg">Entre com o seu e-mail e password.</span>
+							</div>
+							<input id="login_email" class="form-control" type="text" placeholder="E-Mail" required>
+							<input id="login_password" class="form-control" type="password" placeholder="Password" required>
+							<div class="checkbox">
+								<label><input type="checkbox"> Lembrar nome de utilizador</label>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div>
+								<button id="btnLogin" class="btn btn-lg btn-block" style="background-color: #83bde3; color: white">Entrar</button>
+							</div>
+							<div>
+								<button id="login_register_btn" type="button" class="btn btn-link">Registar</button>
+							</div>
+						</div>
+					</form>
+					<!-- FIM # Login Form -->
+					
+					<!-- INICIO | Register Form -->
+					<form id="register-form" onsubmit="return false" style="display:none;">
+						<div class="modal-body">
+							<div id="div-register-msg">
+								<div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+								<span id="text-register-msg">Registe-se.</span>
+							</div>
+							<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+							<input id="register_password" class="form-control" type="password" placeholder="Password" required>
+						</div>
+						<div class="modal-footer">
+							<div>
+								<button id="btnregisto" class="btn btn-lg btn-block" style="background-color: #83bde3; color: white">Registar</button>
+							</div>
+						<div>
+							<button id="register_login_btn" type="button" class="btn btn-link">Iniciar Sessão</button>
+						</div>
+					</div>
+				</form>
+				<!-- FIM | Register Form -->
+			</div>
+			<!-- FIM # DIV Form -->
+		</div>
 	</div>
-	<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
-	<input id="register_password" class="form-control" type="password" placeholder="Password" required>
-</div>
-<div class="modal-footer">
-	<div>
-		<button id="btnregisto" class="btn btn-lg btn-block" style="background-color: #83bde3; color: white">Registar</button>
-</div>
-<div>
-	<button id="register_login_btn" type="button" class="btn btn-link">Iniciar Sessão</button>
-</div>
-</div>
-</form>
-<!-- FIM | Register Form -->
-
-</div>
-<!-- FIM # DIV Form -->
-
-</div>
-</div>
 </div>
 <!-- FIM # MODAL LOGIN -->
-
 
 </body>
 

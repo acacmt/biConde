@@ -141,7 +141,6 @@ div.polaroid {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
 }
-
 #close:hover,
 #close:focus {
     color: #bbb;
@@ -152,14 +151,6 @@ div.polaroid {
     color: white;
     text-align: center;
 }
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    #modal-content {
-        width: 100%;
-    }
-}
-
 #leg {
   text-align: center;
   padding: 10px 20px;
@@ -182,6 +173,7 @@ strong{
     /*Estilização da página*/
     body {
         background-image: url("../img/background_smart.png");
+         background-repeat: repeat;
     }
     
     /*Estilização dos icons*/
@@ -213,4 +205,9 @@ strong{
      strong{
          font-size: 12px;
      }
+
+     /* 100% Image Width on Smaller Screens */
+     #modal-content {
+        width: 100%;
+    }
 }

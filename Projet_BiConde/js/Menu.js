@@ -100,8 +100,10 @@ $(document).ready(function () {
             //Apresenta o email da pessoa logada
             $('#perfil').text(user.email);
 
-            //
+            //Esconde o Iniciar Sessão do navbar
             $('#li_login').hide();
+
+            //Mostra o Terminar Sessão do navbar
             $('#perfil').show();
 
             //Altera o icon Iniciar Sessão para o Terminar Sessão
@@ -112,11 +114,14 @@ $(document).ready(function () {
                 logout();
             });
 
-            $("#reserva").click(function () {
-                console.log("CARREHUEI");
+            //Altera a div da reserva de bicicletas
+            $(document).on('click', '.reserva', function () {
+                //console.log("CARREGUEI");
                 $("#id_reserva").html('<p>Tem até 40 minutos para efectuar o levantamento da sua reserva!</p>');
-                //$("#id_reserva").text("Tem até 40 minutos para efectuar o levantamento da sua reserva!");
                 $("#id_reserva").css("color", "green");
+
+                reservar($(this).val());
+
             });
 
         } else {
@@ -147,7 +152,10 @@ $(document).ready(function () {
                 alert('Inicie sessão ou registe-se para aceder!');
             })
 
+            //Mostra o Iniciar Sessão do navbar
             $('#li_login').show();
+
+            //Esconde o Terminar Sessão do navbar
             $('#perfil').hide();
         }
     });
@@ -162,4 +170,41 @@ $(document).ready(function () {
             // An error happened.
         });
     }
+
+    //FUNÇÃO RESERVAR
+    function reservar(k) {
+
+        var ref = firebase.database().ref().child("Locais");
+
+        //Vai buscar os dados a firebase
+        ref.child(k).once('value', function (snap) {
+            var lat = snap.val().latitude;
+            var lng = snap.val().longitude;
+            var nome = snap.val().nome;
+            var bicicletas = snap.val().bicicletas;
+            var livres = snap.val().livres;
+
+            if (livres == 0) {
+                $("#id_reserva").html('<p>De momento não há bicicletas disponíveis neste ponto!</p>');
+                $("#id_reserva").css("color", "red");
+            }
+            else {
+                livres--;
+                $(".atualizar").text("Bicicletas: " + livres + "/" + bicicletas);
+            }
+
+            //Envia para a firebase os dados atualizados após efectuado uma reserva
+            ref.child(k).set({
+                livres: livres,
+                nome: nome,
+                bicicletas: bicicletas,
+                latitude: lat,
+                longitude: lng
+            });
+
+        });
+
+
+    }
+
 })
