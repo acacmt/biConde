@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>biConde</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--FIREBASE-->
+	<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+
+    <!--Icon da barra de separadores-->
+    <link rel="icon" href="img/favicon.ico" type="icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    
+    <!--Invoca a estilização em css-->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--JAVASCRIPT-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--Invoca o JavaScript-->
+	<script src="js/log.js"></script>
+	<script src="js/Menu.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!--xxxxxxxxxxxxx-->
+        <!--    NAVBAR   -->
+        <!--xxxxxxxxxxxxx-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-default navbar-inverse" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="Menu.html">biConde</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="Pontos.html" id="li_locais">Locais</a></li>
+                            <li class="active"><a href="">Informações</a></li>
+                            <li><a href="Galeria.html">Galeria</a></li>
+                            <li><a href="http://www.cm-viladoconde.pt/pages/1" target="_blank">Câmara</a></li>
+                            <li><a href="Contactos.html" id="li_contactos">Contactos</a></li>
+                        </ul>
+                        
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a data-toggle="modal" data-target="#login-modal" id="li_login">Iniciar Sessão</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="perfil"><strong class="caret"></strong></a>
+                                <ul class="dropdown-menu">
+                                    <center><button id="btnLogout" class="btn btn-md btn-default">Terminar Sessão</button></center>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!--xxxxxxxxxxxxx-->
+        <!-- INFORMAÇÕES -->
+        <!--xxxxxxxxxxxxx-->
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="jumbotron">
+                    <a href="http://www.cm-viladoconde.pt/uploads/writer_file/document/1798/Regulamento_biConde_aprovado_em_Assembleia_Municipal_de_25_06_2015.pdf" target="_blank"><span>Regulamento</span></a>
+			    </div>
+            </div>
+            <div class="col-md-9">
+                <div class="jumbotron">
+                    <p>Vila do Conde amiga das duas rodas</p>
+                    É uma nova rede de bicicletas de uso partilhado. À semelhança de várias cidades em todo o país, Vila do Conde também quer por os seus habitantes e visitantes a pedalar.
+                    <br><br>
+                    São 60 bicicletas, as biConde, distribuídas por 10 parques em toda a cidade e sempre disponíveis para utilizadores frequentes e ocasionais
+                    <br><br>
+                    Para aderir ao sistema, basta fazer a inscrição nos locais designados (Câmara Municipal, Loja Interativa de Turismo, Posto de Turismo ou Polícia Municipal) para receber o cartão anual que permite usar a bicicleta gratuitamente durante 1 hora (por cada período de utilização). A segunda hora está sujeita ao pagamento de 0,50 € por cada fração de 15 minutos,
+                    <br><br>
+                    Os utilizadores ocasionais pagam 2€ / hora para períodos de utilização de duas horas. Podes levantar o veículo num dos parques e deixá-las noutro.          
+			    </div>
+            </div>
+        </div>
+
+        <!--xxxxxxxxxxxxxxxxxxxxxx-->
+        <!-- INICIO # MODAL LOGIN -->
+        <!--xxxxxxxxxxxxxxxxxxxxxx-->
+        
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header" align="center">
+					<img class="img-circle" id="img_logo" src="img/1429877002.jpg">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+				</div>
+
+				<!-- INICIO # DIV Form -->
+				<div id="div-forms">
+
+					<!-- INICIO # Login Form -->
+					<form id="login-form">
+						<div class="modal-body">
+							<div id="div-login-msg">
+								<div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+								<span id="text-login-msg">Entre com o seu e-mail e password.</span>
+							</div>
+							<input id="login_email" class="form-control" type="text" placeholder="E-Mail" required>
+							<input id="login_password" class="form-control" type="password" placeholder="Password" required>
+							<div class="checkbox">
+								<label>
+                                    <input type="checkbox"> Lembrar nome de utilizador
+                                </label>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div>
+								<button id="btnLogin" class="btn btn-lg btn-block">Entrar</button>
+							</div>
+							<div>
+								<button id="login_register_btn" type="button" class="btn btn-link">Registar</button>
+							</div>
+						</div>
+					</form>
+					<!-- FIM # Login Form -->
+
+					<!-- INICIO | Register Form -->
+					<form id="register-form" onsubmit="return false" style="display:none;">
+						<div class="modal-body">
+							<div id="div-register-msg">
+								<div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+								<span id="text-register-msg">Registe-se.</span>
+							</div>
+							<input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+							<input id="register_password" class="form-control" type="password" placeholder="Password" required>
+						</div>
+						<div class="modal-footer">
+							<div>
+								<button id="btnregisto" class="btn btn-lg btn-block" >Registar</button>
+							</div>
+							<div>
+								<button id="register_login_btn" type="button" class="btn btn-link">Iniciar Sessão</button>
+							</div>
+						</div>
+					</form>
+					<!-- FIM | Register Form -->
+
+				</div>
+				<!-- FIM # DIV Form -->
+
+			</div>
+		</div>
+	</div>
+	<!-- FIM # MODAL LOGIN -->
+
+    </div>
+</body>
+
+</html>
